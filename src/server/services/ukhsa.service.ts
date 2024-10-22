@@ -1,9 +1,22 @@
+import ukhsaClient, { Enum } from '@/ukhsaClient'
+
 export async function getData() {
-    const url = new URL('https://api.ukhsa-dashboard.data.gov.uk/themes/infectious_disease/sub_themes/respiratory/topics/COVID-19/geography_types/Nation/geographies/England/metrics/COVID-19_testing_PCRcountByDay')
-    url.searchParams.set("page_size", "")
-    url.searchParams.set("page", "")
+    const { data } = await ukhsaClient.GET('/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics/{metric}', {
+        params: {
+            path: {
+                theme: Enum.Theme.INFECTION_DISEASE,
+                sub_theme: Enum.SubTheme.RESPIRATORY,
+                topic: Enum.RespiratoryTopic.COVID_19,
+                geography_type: Enum.GeographyType.NATION,
+                geography: Enum.NationGeographyType.ENGLAND,
+                metric: Enum.Metric.COVID_19_DEATHS_ONS_BY_DAY
+            },
+            query: {
+                page_size: 50,
+            }
+        },
 
-    const response = await fetch(url)
+    })
 
-    return (await response.json()) as unknown
+    return data
 }
