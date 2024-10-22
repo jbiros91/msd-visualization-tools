@@ -1,0 +1,5 @@
+apis:
+  ukhsa@v0.1.0:
+    root: https://api.ukhsa-dashboard.data.gov.uk/api/schema
+    x-openapi-ts:
+      output: './src/ukhsaClient/__generated__/schema.ts'
