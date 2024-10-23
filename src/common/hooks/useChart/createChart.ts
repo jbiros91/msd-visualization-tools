@@ -10,6 +10,7 @@ const createChart = ({
 }: ChartOptions) => {
     const chart = new Chart({
         container,
+        autoFit: true
     });
 
     // Declare visualization

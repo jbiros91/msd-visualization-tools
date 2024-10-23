@@ -20,9 +20,7 @@ const UKHSATest = () => {
 
 
     return (
-        <div className="mt-80">
-            <Chart data={Object.values(groupByMonthAndYear)}/>
-        </div>
+        <Chart data={Object.values(groupByMonthAndYear)}/>
     )
 }
 

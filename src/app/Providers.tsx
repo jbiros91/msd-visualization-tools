@@ -7,9 +7,7 @@ import TrpcProvider from "@/lib/trpc";
  */
 const Providers = ({ children }: PropsWithChildren) => (
     <TrpcProvider>
-        <div>
-            {children}
-        </div>
+        {children}
     </TrpcProvider>
 )
 
