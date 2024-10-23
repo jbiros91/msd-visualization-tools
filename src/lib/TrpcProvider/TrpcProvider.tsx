@@ -1,5 +1,6 @@
 'use client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental'
 import { httpBatchLink } from '@trpc/client'
 import { useState, PropsWithChildren } from 'react'
 import trpc from './client'
@@ -30,7 +31,9 @@ const TrpcProvider = ({ children }: PropsWithChildren) => {
     return (
         <trpc.Provider client={trpcClient} queryClient={queryClient}>
             <QueryClientProvider client={queryClient}>
-                {children}
+                {/*<ReactQueryStreamedHydration>*/}
+                    {children}
+                {/*</ReactQueryStreamedHydration>*/}
             </QueryClientProvider>
         </trpc.Provider>
     )

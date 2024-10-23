@@ -6,7 +6,7 @@ import {
     FilterOutlined,
     UnorderedListOutlined, CommentOutlined, HeartOutlined
 } from "@ant-design/icons";
-import React from "react";
+import React, {Suspense} from "react";
 import Page, { PageHeader } from "@/common/components/Page";
 
 export default function Home() {
@@ -19,7 +19,8 @@ export default function Home() {
           <Layout.Content className="relative grow">
               <Page>
                   <PageHeader>
-                      <h1 className="text-2xl font-bold">Page Title</h1>
+                      <h1 className="text-2xl font-bold">COVID-19 in England</h1>
+
 
                       <Space>
                           <Button disabled iconPosition="end" icon={<DownloadOutlined />}>Export PDF</Button>
@@ -34,7 +35,7 @@ export default function Home() {
                   </PageHeader>
                   <Row gutter={[32,32]}>
                       <Col xs={24} xl={12}>
-                          <Card title="Test"
+                          <Card title="Deaths"
                                 actions={[
                                     <Avatar key="avatar" src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />,
                                     <HeartOutlined />,
@@ -48,12 +49,14 @@ export default function Home() {
 
                                 ]}
                           >
-                              <UKHSATest/>
+                              <Suspense fallback={<h1 className="text-8xl">Loading</h1>}>
+                                  <UKHSATest/>
+                              </Suspense>
                           </Card>
                       </Col>
 
                       <Col xs={24} xl={12}>
-                          <Card title="Test"
+                          <Card title="Patients Admitted to Hospital"
                                 actions={[
                                     <Avatar key="avatar" src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />,
                                     <HeartOutlined />,
@@ -66,7 +69,9 @@ export default function Home() {
                                     </Button>
                                 ]}
                           >
-                              <UKHSATest/>
+                              <Suspense fallback={<h1 className="text-8xl">Loading</h1>}>
+                                  <UKHSATest/>
+                              </Suspense>
                           </Card>
                       </Col>
                   </Row>
