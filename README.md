@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Requirements for Visualization Tools
+1. Use Typescript ✅
+2. Use next.js ✅
+3. Use antd ✅
+4. Use Remote API UKHSA 🟢
+   - implemented `ukhsaApi` using:
+     - `openapi-typescipt` to generate ts types from their swagger (OpenAPI).
+     - `openapi-fetch` which is just typed `fetch`, typed by genearted types from previous point 
 
-## Getting Started
+5. Use `g2.antv` lib gor charts ✅a
+6. [OPTIONAL] Use `trpc` libray for backed ✅
+    - all backed is implemnted using `trpc`
+      - crated 2 services:
+        - `ukhsha.service.ts` which fetches data from public API (using `ukhsaApi`)
+        - `favorites.service.ts` which uses `Drizzle ORM` to connect to `Vercel Postgres DB`, which control "favoite " feature
 
-First, run the development server:
+# Stack
+- NextJs (Meta Framework)
+- Ant Desing (Component library)
+- Tailwind CSS (Custom styling)
+- tRPC (BE framework for client-server communication)
+- Drizzle ORM (connect to "Vercel Postgress databse")
+- `openapi-typescript`, `openapi-fetch` for generate rest client for UKHSA public api
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Folder Structure in `/src`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `/app`
+My goal is to keep the Next.js file-based router folder as slim as possible, containing only files related to Next.js file routes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### `/common`
+Folder for all reusalbe stuff, I use sub-folder for generic `/components`, `/hooks` and `/utils` (did not need any).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### `db`
+Folder for database `schema` definition.
+Has `/queries` folder for defining standard CRUD methods for managing databse (Provider Layer)
 
-## Learn More
+### `features`
+Folder for all business components, hooks etc.
 
-To learn more about Next.js, take a look at the following resources:
+### `lib`
+Folder for files that do not belong anywhere else
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `server`
+tRPC server files
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# `.env`
+For db connections
+`POSTGRES_URL`

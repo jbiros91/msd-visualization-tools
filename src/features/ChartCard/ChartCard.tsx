@@ -51,7 +51,7 @@ const ChartCard = async ({ title, metric, type }: Props) => {
                 fallback={
                     <Result
                         status='error'
-                        title='Server Error 😔'
+                        title='Something Went Wrong 😔'
                     />
                 }
             >
