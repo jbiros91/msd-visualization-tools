@@ -1,10 +1,10 @@
 import { unstable_noStore as noStore } from 'next/cache'
-import { ChartType } from '../types'
+import { MetricType } from '../types'
 import HearthButton from './HearthButton'
 import trpcServer from '@/lib/trpcServer'
 
 type Props = {
-    type: ChartType
+    type: MetricType
 }
 
 const FavoriteButton = async ({ type }: Props) => {

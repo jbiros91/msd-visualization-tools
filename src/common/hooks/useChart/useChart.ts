@@ -17,7 +17,7 @@ const useChart = (options: Omit<ChartOptions, 'container'>) => {
             container: containerRef.current,
         })
 
-        chartRef.current.render()
+        void chartRef.current.render()
 
         return () => {
             chartRef.current?.destroy()

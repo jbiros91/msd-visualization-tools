@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd'
 import Page, { PageHeader } from '@/common/components/Page'
-import ChartCard, { ChartType } from '@/features/ChartCard'
+import ChartCard, { MetricType } from '@/features/ChartCard'
 
 export default async function Home() {
     return (
@@ -16,7 +16,8 @@ export default async function Home() {
                 >
                     <ChartCard
                         title='Patients Admitted to Hospital'
-                        type={ChartType.COVID_19_ADMISSION_BY_DAY}
+                        metric={MetricType.COVID_19_ADMISSION_BY_DAY}
+                        type='interval'
                     />
                 </Col>
 
@@ -26,7 +27,8 @@ export default async function Home() {
                 >
                     <ChartCard
                         title='Deaths'
-                        type={ChartType.COVID_19_DEATHS_BY_DAY}
+                        metric={MetricType.COVID_19_DEATHS_BY_DAY}
+                        type='line'
                     />
                 </Col>
             </Row>

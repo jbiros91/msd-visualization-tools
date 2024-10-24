@@ -3,19 +3,19 @@ import React, { type MouseEventHandler } from 'react'
 import { HeartFilled, HeartOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
 import { toast } from 'react-toastify'
-import { ChartType } from '../types'
+import { MetricType } from '../types'
 import { trpc } from '@/common/components/TrpcProvider'
 
 type Props = {
-    type: ChartType
+    type: MetricType
     initialIsFavorite: boolean
 }
 
-export const getToastMsg = (isFavorite: boolean, type: ChartType) => {
+export const getToastMsg = (isFavorite: boolean, type: MetricType) => {
     const msg = isFavorite ? 'made favorite ❤️' : 'was removed from favorite'
     const map = {
-        [ChartType.COVID_19_ADMISSION_BY_DAY]: `Metric "Patients Admitted to Hospital" ${msg}`,
-        [ChartType.COVID_19_DEATHS_BY_DAY]: `Metric "Deaths" ${msg}`,
+        [MetricType.COVID_19_ADMISSION_BY_DAY]: `Metric "Patients Admitted to Hospital" ${msg}`,
+        [MetricType.COVID_19_DEATHS_BY_DAY]: `Metric "Deaths" ${msg}`,
     }
 
     return map[type]
