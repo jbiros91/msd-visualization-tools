@@ -1,21 +1,16 @@
 import { z } from 'zod'
 import { publicProcedure, createRouter } from '../trpc'
-import queries from '@/db/queries'
+import service from '@/server/services'
 
 export default createRouter({
-    getIsFavoriteByChatId: publicProcedure
+    getIsFavoriteByChartId: publicProcedure
         .input(z.string())
         .query(async (opts) =>
-            queries.select.getIsFavoriteByChartId(opts.input),
+            service.favorite.getIsFavoriteByChartId(opts.input),
         ),
-    toggleFavorite: publicProcedure.input(z.string()).mutation(async (opts) => {
-        const chartId = opts.input
-        const isFavorite = await queries.select.getIsFavoriteByChartId(chartId)
-
-        const toggleFavorite = isFavorite
-            ? queries.delete.deleteFavoriteByChartId
-            : queries.insert.createFavorite
-
-        return toggleFavorite(chartId)
-    }),
+    toggleFavorite: publicProcedure
+        .input(z.string())
+        .mutation(async (opts) =>
+            service.favorite.toggleFavoriteByChartId(opts.input),
+        ),
 })

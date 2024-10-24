@@ -7,4 +7,5 @@ export type ChartOptions = {
     xAxis: string
     yAxis: string
     key: string
+    type?: 'line' | 'interval'
 }

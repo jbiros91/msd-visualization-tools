@@ -1,4 +1,4 @@
-export enum ChartType {
+export enum MetricType {
     COVID_19_ADMISSION_BY_DAY = 'COVID_19_ADMISSION_BY_DAY',
     COVID_19_DEATHS_BY_DAY = 'COVID_19_DEATHS_BY_DAY',
 }
