@@ -1,4 +1,9 @@
-import { Col, Row } from 'antd'
+import { Button, Col, Row, Space } from 'antd'
+import {
+    DownloadOutlined,
+    FilterOutlined,
+    UnorderedListOutlined,
+} from '@ant-design/icons'
 import Page, { PageHeader } from '@/common/components/Page'
 import ChartCard, { MetricType } from '@/features/ChartCard'
 
@@ -7,6 +12,30 @@ export default async function Home() {
         <Page>
             <PageHeader>
                 <h1 className='text-2xl font-bold'>COVID-19 in England</h1>
+
+                <Space>
+                    <Button
+                        icon={<DownloadOutlined />}
+                        iconPosition='end'
+                    >
+                        Export to PDF
+                    </Button>
+                    <Button
+                        icon={<UnorderedListOutlined />}
+                        iconPosition='end'
+                    >
+                        Notes (3)
+                    </Button>
+                    <Button
+                        icon={<FilterOutlined />}
+                        iconPosition='end'
+                    >
+                        <span className='text-xs pt-0.5 w-6 h-5 bg-blue-500 rounded-full text-white'>
+                            9+
+                        </span>
+                        Filter
+                    </Button>
+                </Space>
             </PageHeader>
 
             <Row gutter={[32, 32]}>
