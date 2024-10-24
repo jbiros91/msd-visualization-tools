@@ -28,10 +28,10 @@ const HearhButton = ({ type, initialIsFavorite }: Props) => {
         })
 
     const toggleFavorite = trpc.favorites.toggleFavorite.useMutation({
-        onSettled: (data) => {
+        onSettled: async (data) => {
             if (data === undefined) return
 
-            void refetch()
+            await refetch()
             toast(getToastMsg(data, type), {
                 type: data ? 'success' : 'warning',
             })
