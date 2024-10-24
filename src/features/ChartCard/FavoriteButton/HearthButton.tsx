@@ -23,7 +23,7 @@ export const getToastMsg = (isFavorite: boolean, type: ChartType) => {
 
 const HearhButton = ({ type, initialIsFavorite }: Props) => {
     const { data: isFavorite, refetch } =
-        trpc.favorites.getIsFavoriteByChatId.useQuery(type, {
+        trpc.favorites.getIsFavoriteByChartId.useQuery(type, {
             initialData: initialIsFavorite,
         })
 
@@ -35,6 +35,9 @@ const HearhButton = ({ type, initialIsFavorite }: Props) => {
             toast(getToastMsg(data, type), {
                 type: data ? 'success' : 'warning',
             })
+        },
+        onError: () => {
+            toast.error('Something went wrong 😔')
         },
     })
 

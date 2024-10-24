@@ -2,13 +2,9 @@ import { eq } from 'drizzle-orm'
 import { db } from '../db'
 import { favoritesTable, type SelectFavorite } from '../schema'
 
-export async function getIsFavoriteByChartId(
-    chartId: SelectFavorite['chartId'],
-) {
-    const result = await db
+export async function getFavoriteByChartId(chartId: SelectFavorite['chartId']) {
+    return db
         .select()
         .from(favoritesTable)
         .where(eq(favoritesTable.chartId, chartId))
-
-    return result.length === 1
 }

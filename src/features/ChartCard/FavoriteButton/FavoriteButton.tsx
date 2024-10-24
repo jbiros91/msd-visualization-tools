@@ -7,7 +7,7 @@ type Props = {
 }
 
 const FavoriteButton = async ({ type }: Props) => {
-    const isFavorite = await trpcServer.favorites.getIsFavoriteByChatId(type)
+    const isFavorite = await trpcServer.favorites.getIsFavoriteByChartId(type)
 
     return (
         <HearthButton
