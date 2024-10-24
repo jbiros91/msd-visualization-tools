@@ -3,7 +3,7 @@ import favorites from './favorites.router'
 
 const router = {
     ukhsa,
-    favorites
+    favorites,
 }
 
 export default router

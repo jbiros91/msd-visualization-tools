@@ -1,6 +1,6 @@
-import { PropsWithChildren } from "react";
-import TrpcProvider from "@/lib/TrpcProvider";
-import AntdRegistryProvider from "@/lib/AntdRegistryProvider";
+import { PropsWithChildren } from 'react'
+import TrpcProvider from '@/lib/TrpcProvider'
+import AntdRegistryProvider from '@/lib/AntdRegistryProvider'
 
 /**
  * Place for all react's context providers.
@@ -8,9 +8,7 @@ import AntdRegistryProvider from "@/lib/AntdRegistryProvider";
  */
 const Providers = ({ children }: PropsWithChildren) => (
     <TrpcProvider>
-        <AntdRegistryProvider>
-            {children}
-        </AntdRegistryProvider>
+        <AntdRegistryProvider>{children}</AntdRegistryProvider>
     </TrpcProvider>
 )
 

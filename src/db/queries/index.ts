@@ -5,7 +5,7 @@ import * as select from './select'
 const queries = {
     delete: del,
     insert,
-    select
+    select,
 }
 
 export default queries

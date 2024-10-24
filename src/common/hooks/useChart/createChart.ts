@@ -1,17 +1,11 @@
-import { Chart, type Runtime } from "@antv/g2";
+import { Chart } from '@antv/g2'
 import type { ChartOptions } from './types'
 
-const createChart = ({
-    container,
-    xAxis,
-    yAxis,
-    key,
-    data
-}: ChartOptions) => {
+const createChart = ({ container, xAxis, yAxis, key, data }: ChartOptions) => {
     const chart = new Chart({
         container,
-        autoFit: true
-    });
+        autoFit: true,
+    })
 
     // Declare visualization
     chart
@@ -20,12 +14,12 @@ const createChart = ({
         .encode('x', xAxis) // Encode x channel
         .encode('y', yAxis) // Encode y channel
         .encode('key', key) // Specify key
-        .animate('update', { duration: 300 }); // Specify the time to update the animation
+        .animate('update', { duration: 300 }) // Specify the time to update the animation
 
     // Render visualization
-    void chart.render();
+    void chart.render()
 
-    return chart;
+    return chart
 }
 
 export default createChart

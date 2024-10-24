@@ -1,20 +1,18 @@
-import useChart from "@/common/hooks/useChart";
+import useChart from '@/common/hooks/useChart'
 
 type Props = {
     data: unknown[]
 }
 
-const Chart = ({data}: Props) => {
-    const {setReference} = useChart({
+const Chart = ({ data }: Props) => {
+    const { setReference } = useChart({
         data,
-        xAxis: "date",
+        xAxis: 'date',
         yAxis: 'value',
-        key: 'date'
+        key: 'date',
     })
 
-    return (
-        <div ref={setReference}></div>
-    )
+    return <div ref={setReference}></div>
 }
 
 export default Chart

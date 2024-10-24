@@ -4,13 +4,13 @@
  */
 
 export interface paths {
-    "/": {
+    '/': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description **Using the API**
          *
          *     Use the API to extract and save data from the UKHSA data dashboard.
@@ -52,278 +52,278 @@ export interface paths {
          *
          *     Unlike the coronavirus (COVID-19) dashboard API, you cannot extract all the data across a topic or geography type.
          *     The API is designed for you to be selective by data type, topic, geography and metric. */
-        get: operations["root_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/schema": {
+        get: operations['root_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/api/schema': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description OpenApi3 schema for this API. Format can be selected via content negotiation.
          *
          *     - YAML: application/vnd.oai.openapi
          *     - JSON: application/vnd.oai.openapi+json */
-        get: operations["api_schema_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/health/": {
+        get: operations['api_schema_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/health/': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This health probe can be used to determine whether the service is ready. */
-        get: operations["health_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/": {
+        get: operations['health_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available **themes** and hyperlinks to their corresponding detail view.
          *
          *     A `theme` is the largest topical subgroup e.g. **infectious_disease**. */
-        get: operations["themes_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}": {
+        get: operations['themes_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **sub_themes**. */
-        get: operations["themes_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/": {
+        get: operations['themes_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available **sub_themes** and hyperlinks to their corresponding detail view.
          *
          *     The `sub_theme` field is positioned 1 step below `theme`.
          *
          *     A `sub_theme` is a topical subgroup  e.g. **respiratory** */
-        get: operations["themes_sub_themes_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}": {
+        get: operations['themes_sub_themes_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **topics**. */
-        get: operations["themes_sub_themes_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics": {
+        get: operations['themes_sub_themes_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available **topics** and hyperlinks to their corresponding detail view.
          *
          *     The `topic` field is positioned 1 step below `sub_theme`.
          *
          *     A `topic` is the name of the topic/threat e.g. **COVID-19** */
-        get: operations["themes_sub_themes_topics_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}": {
+        get: operations['themes_sub_themes_topics_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **geography_type**. */
-        get: operations["themes_sub_themes_topics_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types": {
+        get: operations['themes_sub_themes_topics_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available geography types and hyperlinks to their corresponding detail view.
          *
          *     The `geography_type` field is positioned 1 step below `topic`.
          *
          *     A `geography_type` is the type of geography e.g. **Nation** */
-        get: operations["themes_sub_themes_topics_geography_types_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}": {
+        get: operations['themes_sub_themes_topics_geography_types_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **geography**. */
-        get: operations["themes_sub_themes_topics_geography_types_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies": {
+        get: operations['themes_sub_themes_topics_geography_types_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available geographies and hyperlinks to their corresponding detail view.
          *
          *     The `geography` field is positioned 1 step below `geography_type`.
          *
          *     A `geography` is the value of the geography e.g. **London** */
-        get: operations["themes_sub_themes_topics_geography_types_geographies_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}": {
+        get: operations['themes_sub_themes_topics_geography_types_geographies_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **metric**. */
-        get: operations["themes_sub_themes_topics_geography_types_geographies_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics": {
+        get: operations['themes_sub_themes_topics_geography_types_geographies_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available metrics and hyperlinks to their corresponding detail view.
          *
          *     The `metric` field is positioned 1 step below `geography`.
          *
          *     A `metric` is the name of the metric being queried for e.g. **COVID-19_deaths_ONSByDay** */
-        get: operations["themes_sub_themes_topics_geography_types_geographies_metrics_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics/{metric}": {
+        get: operations['themes_sub_themes_topics_geography_types_geographies_metrics_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics/{metric}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint will provide the full timeseries of a slice of data.
          *
          *     There are a set of mandatory URL parameters and optional query parameters:
@@ -369,22 +369,22 @@ export interface paths {
          *
          *     - `in_reporting_delay_period` - A boolean indicating whether the data point is considered to be subject
          *     to retrospective updates. */
-        get: operations["themes_sub_themes_topics_geography_types_geographies_metrics_list"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/": {
+        get: operations['themes_sub_themes_topics_geography_types_geographies_metrics_list']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description **Using the API**
          *
          *     Use the API to extract and save data from the UKHSA data dashboard.
@@ -426,241 +426,241 @@ export interface paths {
          *
          *     Unlike the coronavirus (COVID-19) dashboard API, you cannot extract all the data across a topic or geography type.
          *     The API is designed for you to be selective by data type, topic, geography and metric. */
-        get: operations["v2_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/": {
+        get: operations['v2_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available **themes** and hyperlinks to their corresponding detail view.
          *
          *     A `theme` is the largest topical subgroup e.g. **infectious_disease**. */
-        get: operations["v2_themes_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}": {
+        get: operations['v2_themes_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **sub_themes**. */
-        get: operations["v2_themes_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/": {
+        get: operations['v2_themes_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available **sub_themes** and hyperlinks to their corresponding detail view.
          *
          *     The `sub_theme` field is positioned 1 step below `theme`.
          *
          *     A `sub_theme` is a topical subgroup  e.g. **respiratory** */
-        get: operations["v2_themes_sub_themes_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}": {
+        get: operations['v2_themes_sub_themes_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **topics**. */
-        get: operations["v2_themes_sub_themes_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics": {
+        get: operations['v2_themes_sub_themes_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available **topics** and hyperlinks to their corresponding detail view.
          *
          *     The `topic` field is positioned 1 step below `sub_theme`.
          *
          *     A `topic` is the name of the topic/threat e.g. **COVID-19** */
-        get: operations["v2_themes_sub_themes_topics_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}": {
+        get: operations['v2_themes_sub_themes_topics_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **geography_type**. */
-        get: operations["v2_themes_sub_themes_topics_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types": {
+        get: operations['v2_themes_sub_themes_topics_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available geography types and hyperlinks to their corresponding detail view.
          *
          *     The `geography_type` field is positioned 1 step below `topic`.
          *
          *     A `geography_type` is the type of geography e.g. **Nation** */
-        get: operations["v2_themes_sub_themes_topics_geography_types_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}": {
+        get: operations['v2_themes_sub_themes_topics_geography_types_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **geography**. */
-        get: operations["v2_themes_sub_themes_topics_geography_types_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies": {
+        get: operations['v2_themes_sub_themes_topics_geography_types_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available geographies and hyperlinks to their corresponding detail view.
          *
          *     The `geography` field is positioned 1 step below `geography_type`.
          *
          *     A `geography` is the value of the geography e.g. **London** */
-        get: operations["v2_themes_sub_themes_topics_geography_types_geographies_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}": {
+        get: operations['v2_themes_sub_themes_topics_geography_types_geographies_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a hyperlink to the next step in the data hierarchy.
          *
          *     In this case, the next step in the data hierarchy is **metric**. */
-        get: operations["v2_themes_sub_themes_topics_geography_types_geographies_retrieve_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics": {
+        get: operations['v2_themes_sub_themes_topics_geography_types_geographies_retrieve_2']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint returns a list of all available metrics and hyperlinks to their corresponding detail view.
          *
          *     The `metric` field is positioned 1 step below `geography`.
          *
          *     A `metric` is the name of the metric being queried for e.g. **COVID-19_deaths_ONSByDay** */
-        get: operations["v2_themes_sub_themes_topics_geography_types_geographies_metrics_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics/{metric}": {
+        get: operations['v2_themes_sub_themes_topics_geography_types_geographies_metrics_retrieve']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
+    '/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics/{metric}': {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
         /** @description This endpoint will provide the full timeseries of a slice of data.
          *
          *     There are a set of mandatory URL parameters and optional query parameters:
@@ -706,38 +706,38 @@ export interface paths {
          *
          *     - `in_reporting_delay_period` - A boolean indicating whether the data point is considered to be subject
          *     to retrospective updates. */
-        get: operations["v2_themes_sub_themes_topics_geography_types_geographies_metrics_list"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
+        get: operations['v2_themes_sub_themes_topics_geography_types_geographies_metrics_list']
+        put?: never
+        post?: never
+        delete?: never
+        options?: never
+        head?: never
+        patch?: never
+        trace?: never
+    }
 }
-export type webhooks = Record<string, never>;
+export type webhooks = Record<string, never>
 export interface components {
     schemas: {
         APITimeSeriesList: {
-            theme: string;
-            sub_theme: string;
-            topic: string;
-            geography_type: string;
-            geography: string;
-            geography_code: string | null;
-            metric: string;
-            metric_group?: string | null;
-            stratum: string;
-            sex: string | null;
-            age: string | null;
-            year: number;
-            month: number | null;
-            epiweek: number;
+            theme: string
+            sub_theme: string
+            topic: string
+            geography_type: string
+            geography: string
+            geography_code: string | null
+            metric: string
+            metric_group?: string | null
+            stratum: string
+            sex: string | null
+            age: string | null
+            year: number
+            month: number | null
+            epiweek: number
             /** Format: date */
-            date: string;
+            date: string
             /** Format: double */
-            metric_value: number;
+            metric_value: number
             /**
              * @description
              *     Whether the record falls within the current reporting delay period.
@@ -745,27 +745,27 @@ export interface components {
              *
              * @default false
              */
-            in_reporting_delay_period: boolean;
-        };
+            in_reporting_delay_period: boolean
+        }
         APITimeSeriesListSerializerv2: {
-            theme: string;
-            sub_theme: string;
-            topic: string;
-            geography_type: string;
-            geography: string;
-            geography_code: string | null;
-            metric: string;
-            metric_group?: string | null;
-            stratum: string;
-            sex: string | null;
-            age: string | null;
-            year: number;
-            month: number | null;
-            epiweek: number;
+            theme: string
+            sub_theme: string
+            topic: string
+            geography_type: string
+            geography: string
+            geography_code: string | null
+            metric: string
+            metric_group?: string | null
+            stratum: string
+            sex: string | null
+            age: string | null
+            year: number
+            month: number | null
+            epiweek: number
             /** Format: date */
-            date: string;
+            date: string
             /** Format: double */
-            metric_value: number;
+            metric_value: number
             /**
              * @description
              *     Whether the record falls within the current reporting delay period.
@@ -773,799 +773,898 @@ export interface components {
              *
              * @default false
              */
-            in_reporting_delay_period: boolean;
-        };
+            in_reporting_delay_period: boolean
+        }
         GeographyDetail: {
             /** Format: uri */
-            readonly metrics: string;
-        };
+            readonly metrics: string
+        }
         GeographyDetailSerializerv2: {
             /** Format: uri */
-            readonly metrics: string;
-        };
+            readonly metrics: string
+        }
         GeographyList: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         GeographyListSerializerv2: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         GeographyTypeDetail: {
             /** Format: uri */
-            readonly geographies: string;
-        };
+            readonly geographies: string
+        }
         GeographyTypeDetailSerializerv2: {
             /** Format: uri */
-            readonly geographies: string;
-        };
+            readonly geographies: string
+        }
         GeographyTypeList: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         GeographyTypeListSerializerv2: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         MetricList: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         MetricListSerializerv2: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         PaginatedAPITimeSeriesListList: {
             /** @example 123 */
-            count: number;
+            count: number
             /**
              * Format: uri
              * @example http://api.example.org/accounts/?page=4
              */
-            next?: string | null;
+            next?: string | null
             /**
              * Format: uri
              * @example http://api.example.org/accounts/?page=2
              */
-            previous?: string | null;
-            results: components["schemas"]["APITimeSeriesList"][];
-        };
+            previous?: string | null
+            results: components['schemas']['APITimeSeriesList'][]
+        }
         PaginatedAPITimeSeriesListSerializerv2List: {
             /** @example 123 */
-            count: number;
+            count: number
             /**
              * Format: uri
              * @example http://api.example.org/accounts/?page=4
              */
-            next?: string | null;
+            next?: string | null
             /**
              * Format: uri
              * @example http://api.example.org/accounts/?page=2
              */
-            previous?: string | null;
-            results: components["schemas"]["APITimeSeriesListSerializerv2"][];
-        };
+            previous?: string | null
+            results: components['schemas']['APITimeSeriesListSerializerv2'][]
+        }
         SubThemeDetail: {
             /** Format: uri */
-            readonly topics: string;
-        };
+            readonly topics: string
+        }
         SubThemeDetailSerializerv2: {
             /** Format: uri */
-            readonly topics: string;
-        };
+            readonly topics: string
+        }
         SubThemeList: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         SubThemeListSerializerv2: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         ThemeDetail: {
             /** Format: uri */
-            readonly sub_themes: string;
-        };
+            readonly sub_themes: string
+        }
         ThemeDetailSerializerv2: {
             /** Format: uri */
-            readonly sub_themes: string;
-        };
+            readonly sub_themes: string
+        }
         ThemeList: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         ThemeListSerializerv2: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         TopicDetail: {
             /** Format: uri */
-            readonly geography_types: string;
-        };
+            readonly geography_types: string
+        }
         TopicDetailSerializerv2: {
             /** Format: uri */
-            readonly geography_types: string;
-        };
+            readonly geography_types: string
+        }
         TopicList: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
+            readonly link: string
+        }
         TopicListSerializerv2: {
-            name: string;
+            name: string
             /** Format: uri */
-            readonly link: string;
-        };
-    };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+            readonly link: string
+        }
+    }
+    responses: never
+    parameters: never
+    requestBodies: never
+    headers: never
+    pathItems: never
 }
-export type $defs = Record<string, never>;
+export type $defs = Record<string, never>
 export interface operations {
     root_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             /** @description No response body */
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
+                    [name: string]: unknown
+                }
+                content?: never
+            }
+        }
+    }
     api_schema_retrieve: {
         parameters: {
             query?: {
-                lang?: "af" | "ar" | "ar-dz" | "ast" | "az" | "be" | "bg" | "bn" | "br" | "bs" | "ca" | "ckb" | "cs" | "cy" | "da" | "de" | "dsb" | "el" | "en" | "en-au" | "en-gb" | "eo" | "es" | "es-ar" | "es-co" | "es-mx" | "es-ni" | "es-ve" | "et" | "eu" | "fa" | "fi" | "fr" | "fy" | "ga" | "gd" | "gl" | "he" | "hi" | "hr" | "hsb" | "hu" | "hy" | "ia" | "id" | "ig" | "io" | "is" | "it" | "ja" | "ka" | "kab" | "kk" | "km" | "kn" | "ko" | "ky" | "lb" | "lt" | "lv" | "mk" | "ml" | "mn" | "mr" | "ms" | "my" | "nb" | "ne" | "nl" | "nn" | "os" | "pa" | "pl" | "pt" | "pt-br" | "ro" | "ru" | "sk" | "sl" | "sq" | "sr" | "sr-latn" | "sv" | "sw" | "ta" | "te" | "tg" | "th" | "tk" | "tr" | "tt" | "udm" | "ug" | "uk" | "ur" | "uz" | "vi" | "zh-hans" | "zh-hant";
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
+                lang?:
+                    | 'af'
+                    | 'ar'
+                    | 'ar-dz'
+                    | 'ast'
+                    | 'az'
+                    | 'be'
+                    | 'bg'
+                    | 'bn'
+                    | 'br'
+                    | 'bs'
+                    | 'ca'
+                    | 'ckb'
+                    | 'cs'
+                    | 'cy'
+                    | 'da'
+                    | 'de'
+                    | 'dsb'
+                    | 'el'
+                    | 'en'
+                    | 'en-au'
+                    | 'en-gb'
+                    | 'eo'
+                    | 'es'
+                    | 'es-ar'
+                    | 'es-co'
+                    | 'es-mx'
+                    | 'es-ni'
+                    | 'es-ve'
+                    | 'et'
+                    | 'eu'
+                    | 'fa'
+                    | 'fi'
+                    | 'fr'
+                    | 'fy'
+                    | 'ga'
+                    | 'gd'
+                    | 'gl'
+                    | 'he'
+                    | 'hi'
+                    | 'hr'
+                    | 'hsb'
+                    | 'hu'
+                    | 'hy'
+                    | 'ia'
+                    | 'id'
+                    | 'ig'
+                    | 'io'
+                    | 'is'
+                    | 'it'
+                    | 'ja'
+                    | 'ka'
+                    | 'kab'
+                    | 'kk'
+                    | 'km'
+                    | 'kn'
+                    | 'ko'
+                    | 'ky'
+                    | 'lb'
+                    | 'lt'
+                    | 'lv'
+                    | 'mk'
+                    | 'ml'
+                    | 'mn'
+                    | 'mr'
+                    | 'ms'
+                    | 'my'
+                    | 'nb'
+                    | 'ne'
+                    | 'nl'
+                    | 'nn'
+                    | 'os'
+                    | 'pa'
+                    | 'pl'
+                    | 'pt'
+                    | 'pt-br'
+                    | 'ro'
+                    | 'ru'
+                    | 'sk'
+                    | 'sl'
+                    | 'sq'
+                    | 'sr'
+                    | 'sr-latn'
+                    | 'sv'
+                    | 'sw'
+                    | 'ta'
+                    | 'te'
+                    | 'tg'
+                    | 'th'
+                    | 'tk'
+                    | 'tr'
+                    | 'tt'
+                    | 'udm'
+                    | 'ug'
+                    | 'uk'
+                    | 'ur'
+                    | 'uz'
+                    | 'vi'
+                    | 'zh-hans'
+                    | 'zh-hant'
+            }
+            header?: never
+            path?: never
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/vnd.oai.openapi+json": {
-                        [key: string]: unknown;
-                    };
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-        };
-    };
+                    'application/vnd.oai.openapi+json': {
+                        [key: string]: unknown
+                    }
+                    'application/json': {
+                        [key: string]: unknown
+                    }
+                }
+            }
+        }
+    }
     health_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             /** @description No response body */
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
+                    [name: string]: unknown
+                }
+                content?: never
+            }
+        }
+    }
     themes_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["ThemeList"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['ThemeList']
+                }
+            }
+        }
+    }
     themes_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["ThemeDetail"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['ThemeDetail']
+                }
+            }
+        }
+    }
     themes_sub_themes_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["SubThemeList"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['SubThemeList']
+                }
+            }
+        }
+    }
     themes_sub_themes_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["SubThemeDetail"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['SubThemeDetail']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["TopicList"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['TopicList']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["TopicDetail"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['TopicDetail']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_geography_types_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyTypeList"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyTypeList']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_geography_types_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyTypeDetail"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyTypeDetail']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_geography_types_geographies_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyList"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyList']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_geography_types_geographies_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography: string;
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography: string
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyDetail"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyDetail']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_geography_types_geographies_metrics_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography: string;
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography: string
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["MetricList"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['MetricList']
+                }
+            }
+        }
+    }
     themes_sub_themes_topics_geography_types_geographies_metrics_list: {
         parameters: {
             query?: {
-                age?: string;
-                date?: string;
-                epiweek?: number;
-                in_reporting_delay_period?: boolean;
+                age?: string
+                date?: string
+                epiweek?: number
+                in_reporting_delay_period?: boolean
                 /** @description A page number within the paginated result set. */
-                page?: number;
+                page?: number
                 /** @description Number of results to return per page. */
-                page_size?: number;
-                sex?: string;
-                stratum?: string;
-                year?: number;
-            };
-            header?: never;
+                page_size?: number
+                sex?: string
+                stratum?: string
+                year?: number
+            }
+            header?: never
             path: {
-                geography: string;
-                geography_type: string;
-                metric: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography: string
+                geography_type: string
+                metric: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["PaginatedAPITimeSeriesListList"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['PaginatedAPITimeSeriesListList']
+                }
+            }
+        }
+    }
     v2_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             /** @description No response body */
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
+                    [name: string]: unknown
+                }
+                content?: never
+            }
+        }
+    }
     v2_themes_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
+            query?: never
+            header?: never
+            path?: never
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["ThemeListSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['ThemeListSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["ThemeDetailSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['ThemeDetailSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["SubThemeListSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['SubThemeListSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["SubThemeDetailSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['SubThemeDetailSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["TopicListSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['TopicListSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["TopicDetailSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['TopicDetailSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_geography_types_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyTypeListSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyTypeListSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_geography_types_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyTypeDetailSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyTypeDetailSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_geography_types_geographies_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyListSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyListSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_geography_types_geographies_retrieve_2: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography: string;
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography: string
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["GeographyDetailSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['GeographyDetailSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_geography_types_geographies_metrics_retrieve: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: never
+            header?: never
             path: {
-                geography: string;
-                geography_type: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography: string
+                geography_type: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["MetricListSerializerv2"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['MetricListSerializerv2']
+                }
+            }
+        }
+    }
     v2_themes_sub_themes_topics_geography_types_geographies_metrics_list: {
         parameters: {
             query?: {
-                age?: string;
-                date?: string;
-                epiweek?: number;
-                in_reporting_delay_period?: boolean;
+                age?: string
+                date?: string
+                epiweek?: number
+                in_reporting_delay_period?: boolean
                 /** @description A page number within the paginated result set. */
-                page?: number;
+                page?: number
                 /** @description Number of results to return per page. */
-                page_size?: number;
-                sex?: string;
-                stratum?: string;
-                year?: number;
-            };
-            header?: never;
+                page_size?: number
+                sex?: string
+                stratum?: string
+                year?: number
+            }
+            header?: never
             path: {
-                geography: string;
-                geography_type: string;
-                metric: string;
-                sub_theme: string;
-                theme: string;
-                topic: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
+                geography: string
+                geography_type: string
+                metric: string
+                sub_theme: string
+                theme: string
+                topic: string
+            }
+            cookie?: never
+        }
+        requestBody?: never
         responses: {
             200: {
                 headers: {
-                    [name: string]: unknown;
-                };
+                    [name: string]: unknown
+                }
                 content: {
-                    "application/json": components["schemas"]["PaginatedAPITimeSeriesListSerializerv2List"];
-                };
-            };
-        };
-    };
+                    'application/json': components['schemas']['PaginatedAPITimeSeriesListSerializerv2List']
+                }
+            }
+        }
+    }
 }
