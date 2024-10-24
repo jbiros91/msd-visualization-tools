@@ -1,22 +1,28 @@
-import ukhsaClient, { Enum } from '@/ukhsaClient'
+import ukhsaClient, { APITimeSeriesList } from '@/ukhsaClient'
 
-export async function getData() {
-    const { data } = await ukhsaClient.GET('/v2/themes/{theme}/sub_themes/{sub_theme}/topics/{topic}/geography_types/{geography_type}/geographies/{geography}/metrics/{metric}', {
-        params: {
-            path: {
-                theme: Enum.Theme.INFECTION_DISEASE,
-                sub_theme: Enum.SubTheme.RESPIRATORY,
-                topic: Enum.RespiratoryTopic.COVID_19,
-                geography_type: Enum.GeographyType.NATION,
-                geography: Enum.NationGeographyType.ENGLAND,
-                metric: Enum.Metric.COVID_19_DEATHS_ONS_BY_DAY
-            },
-            query: {
-                page_size: 50,
-            }
-        },
-
-    })
-
-    return data
+type TimeEntry = {
+    date: string
+    value: number
 }
+
+
+export async function getCovid19MetricByDay(metric: 'admission' | 'deaths') {
+    const metricFn = {
+        'admission': ukhsaClient.getAllCovid19AdmissionByDay(),
+        'deaths': ukhsaClient.getAllCovid19AdmissionByDay(),
+    }
+
+    const data = await metricFn[metric]
+
+    // group by year and month
+    const grouped = data.reduce((group, entry) => {
+        const groupId = `${entry.year}-${entry.month}`
+        group[groupId] ??= { date: '', value: 0 }
+        group[groupId].value += entry.metric_value
+        group[groupId].date = groupId
+        return group
+    }, {} as Record<string, TimeEntry>)
+
+    return Object.values(grouped)
+}
+
