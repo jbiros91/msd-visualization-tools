@@ -8,6 +8,12 @@ import {
 } from "@ant-design/icons";
 import React, {Suspense} from "react";
 import Page, { PageHeader } from "@/common/components/Page";
+import FavoriteButton from "@/app/FavoriteButton";
+
+enum ChartId {
+    COVID_19_ADMISSION_BY_DAY = 'COVID_19_ADMISSION_BY_DAY',
+    COVID_19_DEATHS_BY_DAY = 'COVID_19_DEATHS_BY_DAY'
+}
 
 export default function Home() {
   return (
@@ -38,7 +44,8 @@ export default function Home() {
                           <Card title="Deaths"
                                 actions={[
                                     <Avatar key="avatar" src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />,
-                                    <HeartOutlined />,
+                                    <FavoriteButton chartId={ChartId.COVID_19_DEATHS_BY_DAY}/>,
+                                    <CommentOutlined className="" key="comment" />,
                                     <Button type="link" size="small" icon={
                                         <CommentOutlined className="" key="comment" />
                                     }
@@ -59,7 +66,7 @@ export default function Home() {
                           <Card title="Patients Admitted to Hospital"
                                 actions={[
                                     <Avatar key="avatar" src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />,
-                                    <HeartOutlined />,
+                                    <FavoriteButton chartId={ChartId.COVID_19_ADMISSION_BY_DAY} />,
                                     <Button type="link" size="small" icon={
                                         <CommentOutlined className="" key="comment" />
                                     }
