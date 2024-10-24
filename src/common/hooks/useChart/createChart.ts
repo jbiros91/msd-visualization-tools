@@ -14,10 +14,10 @@ const createChart = ({ container, xAxis, yAxis, key, data }: ChartOptions) => {
         .encode('x', xAxis) // Encode x channel
         .encode('y', yAxis) // Encode y channel
         .encode('key', key) // Specify key
-        .animate('update', { duration: 300 }) // Specify the time to update the animation
+    // .animate('update', { duration: 300 }) // Specify the time to update the animation
 
     // Render visualization
-    void chart.render()
+    chart.render()
 
     return chart
 }

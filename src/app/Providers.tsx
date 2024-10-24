@@ -1,6 +1,8 @@
 import type { PropsWithChildren } from 'react'
-import TrpcProvider from '@/lib/TrpcProvider'
-import AntdRegistryProvider from '@/lib/AntdRegistryProvider'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import TrpcProvider from '@/common/components/TrpcProvider'
+import AntdRegistryProvider from '@/common/components/AntdRegistryProvider'
 
 /**
  * Place for all react's context providers.
@@ -9,6 +11,7 @@ import AntdRegistryProvider from '@/lib/AntdRegistryProvider'
 const Providers = ({ children }: PropsWithChildren) => (
     <TrpcProvider>
         <AntdRegistryProvider>{children}</AntdRegistryProvider>
+        <ToastContainer />
     </TrpcProvider>
 )
 

@@ -1,12 +1,18 @@
-'use client'
-import { trpc } from '../lib/TrpcProvider'
-import Chart from '@/app/Chart'
+import serverClient from '@/common/components/TrpcProvider/serverClient'
+import { Chart } from '@/common/components/Chart'
 
-const UKHSATest = () => {
-    const [data] =
-        trpc.ukhsa.getCovid19MetricByDay.useSuspenseQuery('admission')
+const UKHSATest = async () => {
+    // const { data } = trpc.ukhsa.getCovid19MetricByDay.useQuery('admission')
+    const data = await serverClient.ukhsa.getCovid19MetricByDay('admission')
 
-    return <Chart data={data} />
+    return (
+        <Chart
+            data={data}
+            xAxis='date'
+            yAxis='value'
+            key='date'
+        />
+    )
 }
 
 export default UKHSATest

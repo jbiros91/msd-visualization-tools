@@ -16,6 +16,12 @@ const useChart = (options: Omit<ChartOptions, 'container'>) => {
             ...options,
             container: containerRef.current,
         })
+
+        chartRef.current.render()
+
+        return () => {
+            chartRef.current?.destroy()
+        }
     }, [options])
 
     return { chart: chartRef.current, setReference }
