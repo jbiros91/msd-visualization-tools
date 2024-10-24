@@ -1,13 +1,13 @@
 import { ChartType } from '../types'
 import HearthButton from './HearthButton'
-import serverClient from '@/common/components/TrpcProvider/serverClient'
+import trpcServer from '@/lib/trpcServer'
 
 type Props = {
     type: ChartType
 }
 
 const FavoriteButton = async ({ type }: Props) => {
-    const isFavorite = await serverClient.favorites.getIsFavoriteByChatId(type)
+    const isFavorite = await trpcServer.favorites.getIsFavoriteByChatId(type)
 
     return (
         <HearthButton

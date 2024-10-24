@@ -12,7 +12,7 @@ type Props = {
 }
 
 export const getToastMsg = (isFavorite: boolean, type: ChartType) => {
-    const msg = isFavorite ? 'was removed from favorite' : 'favorite ❤️'
+    const msg = isFavorite ? 'was removed from favorite' : 'made favorite ❤️'
     const map = {
         [ChartType.COVID_19_ADMISSION_BY_DAY]: `Metric "Patients Admitted to Hospital" ${msg}`,
         [ChartType.COVID_19_DEATHS_BY_DAY]: `Metric "Deaths" ${msg}`,

@@ -12,7 +12,7 @@ const getBaseUrl = () => {
 }
 
 const createCaller = createCallerFactory(appRouter)
-const serverClient = createCaller({
+const trpcServer = createCaller({
     links: [
         httpBatchLink({
             url: `${getBaseUrl()}/api/trpc`,
@@ -20,4 +20,4 @@ const serverClient = createCaller({
     ],
 })
 
-export default serverClient
+export default trpcServer

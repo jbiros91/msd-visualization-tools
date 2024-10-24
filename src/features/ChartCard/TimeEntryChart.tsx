@@ -1,5 +1,5 @@
 import { Chart } from '@/common/components/Chart'
-import serverClient from '@/common/components/TrpcProvider/serverClient'
+import trpcServer from '@/lib/trpcServer'
 import { ChartType } from '@/features/ChartCard/types'
 
 const metricType = {
@@ -12,7 +12,7 @@ type Props = {
 }
 
 const TimeEntryChart = async ({ type }: Props) => {
-    const entries = await serverClient.ukhsa.getCovid19MetricByDay(
+    const entries = await trpcServer.ukhsa.getCovid19MetricByDay(
         metricType[type],
     )
     return (

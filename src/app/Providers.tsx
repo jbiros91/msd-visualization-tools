@@ -6,7 +6,7 @@ import AntdRegistryProvider from '@/common/components/AntdRegistryProvider'
 
 /**
  * Place for all react's context providers.
- * (eg: Toast Provider, Custom Alert Provider ...)
+ * (eg: Toast Provider, Toast, Custom Alert Provider ...)
  */
 const Providers = ({ children }: PropsWithChildren) => (
     <TrpcProvider>

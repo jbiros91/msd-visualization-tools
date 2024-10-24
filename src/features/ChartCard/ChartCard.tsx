@@ -27,7 +27,7 @@ const ChartCard = async ({ title, type }: Props) => {
                     <FavoriteButton type={type} />
                 </Suspense>,
                 <Button
-                    key={`${ChartType.COVID_19_ADMISSION_BY_DAY}-comment`}
+                    key={`${type}-comment`}
                     type='link'
                     size='small'
                     disabled

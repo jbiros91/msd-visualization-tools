@@ -8,7 +8,7 @@ type TimeEntry = {
 export async function getCovid19MetricByDay(metric: 'admission' | 'deaths') {
     const metricFn = {
         admission: ukhsaClient.getAllCovid19AdmissionByDay(),
-        deaths: ukhsaClient.getAllCovid19AdmissionByDay(),
+        deaths: ukhsaClient.getAllCovid19DeathsByDay(),
     }
 
     const data = await metricFn[metric]
