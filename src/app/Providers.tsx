@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 import TrpcProvider from '@/lib/TrpcProvider'
 import AntdRegistryProvider from '@/lib/AntdRegistryProvider'
 

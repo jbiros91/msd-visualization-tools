@@ -8,6 +8,8 @@
         "start": "next start",
         "lint": "next lint",
         "lint:fix": "next lint --fix && prettier . --write --log-level warn",
+        "ts": "tsc --noEmit --incremental",
+        "ts:watch": "npm run ts -- --watch",
         "gen:ukhsa-client-types": "openapi-typescript",
         "db:migration:generate": "drizzle-kit generate",
         "db:migration:migrate": "drizzle-kit migrate",

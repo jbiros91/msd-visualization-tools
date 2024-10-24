@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 const Page = ({ children }: PropsWithChildren) => {
     return <div className='p-10'>{children}</div>

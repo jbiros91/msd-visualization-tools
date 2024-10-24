@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm'
 import { db } from '../db'
-import { favoritesTable, SelectFavorite } from '@/db/schema'
+import { favoritesTable, type SelectFavorite } from '@/db/schema'
 
 export async function deleteFavoriteByChartId(
     chartId: SelectFavorite['chartId'],

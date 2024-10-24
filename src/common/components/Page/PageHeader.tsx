@@ -1,5 +1,5 @@
 import { Flex, type FlexProps } from 'antd'
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 type Props = {
     justify?: FlexProps['justify']
