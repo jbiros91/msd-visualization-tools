@@ -12,7 +12,7 @@ type Props = {
 }
 
 export const getToastMsg = (isFavorite: boolean, type: ChartType) => {
-    const msg = isFavorite ? 'was removed from favorite' : 'made favorite ❤️'
+    const msg = isFavorite ? 'made favorite ❤️' : 'was removed from favorite'
     const map = {
         [ChartType.COVID_19_ADMISSION_BY_DAY]: `Metric "Patients Admitted to Hospital" ${msg}`,
         [ChartType.COVID_19_DEATHS_BY_DAY]: `Metric "Deaths" ${msg}`,
@@ -28,16 +28,17 @@ const HearhButton = ({ type, initialIsFavorite }: Props) => {
         })
 
     const toggleFavorite = trpc.favorites.toggleFavorite.useMutation({
-        onSettled: () => {
+        onSettled: (data) => {
+            if (data === undefined) return
+
             void refetch()
+            toast(getToastMsg(data, type), {
+                type: data ? 'success' : 'warning',
+            })
         },
     })
 
     const onClick: MouseEventHandler<HTMLButtonElement> = () => {
-        toast(getToastMsg(isFavorite, type), {
-            type: isFavorite ? 'warning' : 'success',
-        })
-
         toggleFavorite.mutate(type)
     }
 
@@ -45,6 +46,7 @@ const HearhButton = ({ type, initialIsFavorite }: Props) => {
 
     return (
         <Button
+            loading={toggleFavorite.isPending}
             onClick={onClick}
             className='h-8'
             type='link'

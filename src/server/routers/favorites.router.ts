@@ -12,10 +12,12 @@ export default createRouter({
         const chartId = opts.input
         const isFavorite = await queries.select.getIsFavoriteByChartId(chartId)
 
-        const toggleFavorite = isFavorite
-            ? queries.delete.deleteFavoriteByChartId
-            : queries.insert.createFavorite
+        if (isFavorite) {
+            await queries.delete.deleteFavoriteByChartId(chartId)
+            return false
+        }
 
-        return toggleFavorite(chartId)
+        await queries.insert.createFavorite(chartId)
+        return true
     }),
 })

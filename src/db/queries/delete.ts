@@ -5,5 +5,6 @@ import { favoritesTable, type SelectFavorite } from '@/db/schema'
 export async function deleteFavoriteByChartId(
     chartId: SelectFavorite['chartId'],
 ) {
-    return db.delete(favoritesTable).where(eq(favoritesTable.chartId, chartId))
+    await db.delete(favoritesTable).where(eq(favoritesTable.chartId, chartId))
+    return true
 }
