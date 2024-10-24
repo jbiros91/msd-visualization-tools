@@ -11,8 +11,10 @@ const PageHeader = ({
 }: PropsWithChildren<Props>) => {
     return (
         <Flex
+            gap={8}
             className='pb-8'
             justify={justify}
+            wrap
         >
             {children}
         </Flex>
